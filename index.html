@@ -184,6 +184,62 @@
           </div>
         </div>
       </section>
+
+      <!-- Open the modal using ID.showModal() method -->
+      <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+      <dialog id="plant-modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <div id="details-box"></div>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </main>
+    <footer class="bg-[#166534]">
+      <!-- footer starts here and responsive -->
+      <section class="py-10">
+        <div class="sm:w-12 md:w-8/12 mx-auto">
+          <h3 class="text-white text-2xl font-bold text-center mb-5">
+            Plant a Tree Today
+          </h3>
+          <div class="flex justify-center items-center">
+            <fieldset class="fieldset rounded-box w-xs p-4 bg-[#15803D]">
+              <input type="text" class="input" placeholder="Your Name" />
+
+              <input
+                type="text"
+                class="input"
+                placeholder="Your Email Address"
+              />
+
+              <select class="select select-sm">
+                <option disabled selected>Number of trees</option>
+                <option>1</option>
+                <option>3</option>
+                <option>3</option>
+              </select>
+
+              <button
+                class="btn text-[#15803D] bg-[#FACC15] border-none rounded-full"
+              >
+                Donate now
+              </button>
+            </fieldset>
+          </div>
+        </div>
+      </section>
+      <!-- copy right section starts here -->
+      <section class="bg-[#14532D]">
+        <p class="text-white text-center">
+          © 2025 Green Earth. All Rights Reserved.
+        </p>
+      </section>
+    </footer>
+    <!-- JS link -->
+    <script src="script.js/script.js"></script>
   </body>
 </html>
