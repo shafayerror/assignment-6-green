@@ -9,18 +9,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
-    <!-- Daisi Ul and tailwind -->
+    <!-- DaisyUI and Tailwind -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
       rel="stylesheet"
       type="text/css"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!----------------------->
   </head>
   <body>
     <header>
-      <!-- navbar starts here and responsive-->
+      <!-- navbar -->
       <nav>
         <div class="navbar bg-[#15803D] px-20 py-5">
           <div class="navbar-start">
@@ -46,9 +45,7 @@
                 class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow bg-[#15803D]"
               >
                 <li><a class="text-white">About</a></li>
-                <li>
-                  <a class="text-white">Galary</a>
-                </li>
+                <li><a class="text-white">Galary</a></li>
                 <li><a class="text-white">Plant a tree</a></li>
               </ul>
             </div>
@@ -57,12 +54,8 @@
           <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
               <li><a class="text-white" href="">About</a></li>
-              <li>
-                <a class="text-white" href="">Galary</a>
-              </li>
-              <li>
-                <a class="text-white" href="">Plant a tree</a>
-              </li>
+              <li><a class="text-white" href="">Galary</a></li>
+              <li><a class="text-white" href="">Plant a tree</a></li>
             </ul>
           </div>
           <div class="navbar-end">
@@ -72,7 +65,8 @@
           </div>
         </div>
       </nav>
-      <!-- Banner and responsive  -->
+
+      <!-- Banner -->
       <section
         class="grid grid-cols-1 md:grid-cols-3 gap-4 banner-container bg-[#CFF0DC]"
       >
@@ -96,52 +90,51 @@
         </div>
       </section>
     </header>
+
     <main class="bg-[#F0FDF4]">
       <!-- Choose your tree section -->
       <section class="pt-24">
         <div class="your-tree-container w-11/12 mx-auto">
           <h3 class="text-2xl font-bold text-center mb-5">Choose Your Trees</h3>
 
-          <div
-            class="tree-container-details grid grid-cols-1 md:grid-cols-5 gap-7"
-          >
-            <!-- catagories section and responsive -->
-              <div class="">
-                        <h3 class="text-2xl font-bold text-center mb-2"> Catagories</h3>
-                        <button onclick="allPlants()" class="btn btn-soft btn-success text-black text-left btn-block px-0 ">All trees</button>
-                        <div id="catagory-name-container" class="catagories-container  col-span-1 ">  </div>
-                     </div>
+          <div class="tree-container-details grid grid-cols-1 md:grid-cols-5 gap-7">
+            <!-- Categories -->
+            <div class="">
+              <h3 class="text-2xl font-bold text-center mb-2">Categories</h3>
+              <button
+                onclick="allPlants()"
+                class="btn btn-soft btn-success text-black text-left btn-block px-0"
+              >
+                All trees
+              </button>
+              <div id="catagory-name-container" class="catagories-container col-span-1"></div>
+            </div>
 
-            <!-- tree details section  and responsive-->
+            <!-- Tree details -->
             <div
               id="tree-details"
               class="trees-container grid grid-cols-1 md:grid-cols-3 gap-7 col-span-3"
-            >
-              <!-- cart and responsive-->
-            </div>
+            ></div>
 
-            <!-- cart section and responsive-->
-            <div class="your-cart-container col-span-1 bg-white">
+            <!-- Cart -->
+            <div class="your-cart-container col-span-1 bg-white p-2">
               <h3 class="text-xl font-bold text-center">Your cart</h3>
+              <div id="CartHistory" class="space-y-2"></div>
+              <div id="total-bill" class="total-price border-t border-gray-400 mt-2 pt-2"></div>
             </div>
           </div>
         </div>
       </section>
-      <!-- campaign section and responsive -->
+
+      <!-- Campaign -->
       <section class="campaign-container">
         <div class="py-24">
-          <h2 class="text-2xl font-bold text-center mb-5">
-            About the Campaign
-          </h2>
-          <div
-            class="campaign-info flex flex-col items-center sm:items-start md:flex-row gap-2 w-8/12 mx-auto"
-          >
+          <h2 class="text-2xl font-bold text-center mb-5">About the Campaign</h2>
+          <div class="campaign-info flex flex-col items-center sm:items-start md:flex-row gap-2 w-8/12 mx-auto">
             <div class="w-1/2 w-full">
-              <img class=" " src="./assets/about.png" alt="" />
+              <img src="./assets/about.png" alt="" />
             </div>
-            <div
-              class="text-lg text-[#1F2937] space-y-5 w-1/2 w-full py-30 px-2"
-            >
+            <div class="text-lg text-[#1F2937] space-y-5 w-1/2 w-full py-30 px-2">
               <p>
                 Green Earth is a global tree plantation initiative dedicated to
                 fighting climate change. Since our start, we’ve planted over
@@ -158,7 +151,8 @@
           </div>
         </div>
       </section>
-      <!-- Impact section and responsive -->
+
+      <!-- Impact -->
       <section class="imapact-conatainer bg-[#CFF0DC]">
         <div class="p-15">
           <h2 class="text-2xl font-bold text-center mb-5">Our Impact</h2>
@@ -178,61 +172,44 @@
         </div>
       </section>
 
-      <!-- Open the modal using ID.showModal() method -->
-      <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+      <!-- modal -->
       <dialog id="plant-modal" class="modal modal-bottom sm:modal-middle">
         <div class="modal-box">
           <div id="details-box"></div>
           <div class="modal-action">
             <form method="dialog">
-              <!-- if there is a button in form, it will close the modal -->
               <button class="btn">Close</button>
             </form>
           </div>
         </div>
       </dialog>
     </main>
+
     <footer class="bg-[#166534]">
-      <!-- footer starts here and responsive -->
       <section class="py-10">
         <div class="sm:w-12 md:w-8/12 mx-auto">
-          <h3 class="text-white text-2xl font-bold text-center mb-5">
-            Plant a Tree Today
-          </h3>
+          <h3 class="text-white text-2xl font-bold text-center mb-5">Plant a Tree Today</h3>
           <div class="flex justify-center items-center">
             <fieldset class="fieldset rounded-box w-xs p-4 bg-[#15803D]">
               <input type="text" class="input" placeholder="Your Name" />
-
-              <input
-                type="text"
-                class="input"
-                placeholder="Your Email Address"
-              />
-
+              <input type="text" class="input" placeholder="Your Email Address" />
               <select class="select select-sm">
                 <option disabled selected>Number of trees</option>
                 <option>1</option>
                 <option>3</option>
-                <option>3</option>
+                <option>5</option>
               </select>
-
-              <button
-                class="btn text-[#15803D] bg-[#FACC15] border-none rounded-full"
-              >
-                Donate now
-              </button>
+              <button class="btn text-[#15803D] bg-[#FACC15] border-none rounded-full">Donate now</button>
             </fieldset>
           </div>
         </div>
       </section>
-      <!-- copy right section starts here -->
       <section class="bg-[#14532D]">
-        <p class="text-white text-center">
-          © 2025 Green Earth. All Rights Reserved.
-        </p>
+        <p class="text-white text-center">© 2025 Green Earth. All Rights Reserved.</p>
       </section>
     </footer>
-    <!-- JS link -->
-    <script src="script.js/script.js"></script>
+
+    <!-- External JS -->
+    <script src="./script.js/script.js"></script>
   </body>
 </html>
